@@ -3,6 +3,8 @@ const input = document.querySelector('input');
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', () => {
+    if (input.value.trim().length === 0) return false
+    else {
     const newBlock = document.createElement('div');
     newBlock.classList.add('newBlock');
     list.appendChild(newBlock);
@@ -34,4 +36,5 @@ btn.addEventListener('click', () => {
             let yes = confirm('Вы уверены, что хотите удалить дело?');
             if (yes === true) list.removeChild(newBlock);
         })
+    }
 })
